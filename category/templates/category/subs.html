@@ -2,6 +2,42 @@
 {% load static %}
 
 {% block content %}
-   <h1> {{content}}</h1>
-   <img src="{% static 'aws/java.png' %}" alt="">
+<div class="container my-5">
+   <a href="#" class="btn btn-primary btn-sm">Create +</a>
+   <table class="table table-bordered">
+      <thead>
+         <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Parent</th>
+            <th>Image</th>
+            <th>Action</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for sub in subs %}
+         <tr>
+            <td>{{sub.id}}</td>
+            <td>{{sub.name}}</td>
+            <td>{{sub.parent.name}}</td>
+            <td><img src="{{sub.image.url}}" alt="" width="100px"></td>
+            <td>
+               <a href="#" class="btn btn-warning btn-sm">
+                  <span class="material-icons">
+                     edit
+                  </span>
+               </a>
+               <a href="#" class="btn btn-danger btn-sm">
+                  <span class="material-icons">
+                     delete_outline
+                  </span>
+               </a>
+
+            </td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+</div>
+
 {% endblock %}
