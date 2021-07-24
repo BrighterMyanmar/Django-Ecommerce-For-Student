@@ -1,0 +1,19 @@
+{% extends 'aws/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container my-5">
+
+    <div class="col-md-6 offset-md-3">
+        <h1 class="text-center">Edit Category</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form | crispy}}
+            <button type="submit" class="btn btn-primary btn-sm float-end">Update</button>
+            <button type="reset" class="btn btn-outline-warning btn-sm float-end me-2">Cancle</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

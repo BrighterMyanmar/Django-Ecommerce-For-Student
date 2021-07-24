@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container my-5">
-   <a href="#" class="btn btn-primary btn-sm">Create +</a>
+   <a href="{% url 'sub-create' %}" class="btn btn-primary btn-sm">Create +</a>
    <table class="table table-bordered">
       <thead>
          <tr>
@@ -22,12 +22,12 @@
             <td>{{sub.parent.name}}</td>
             <td><img src="{{sub.image.url}}" alt="" width="100px"></td>
             <td>
-               <a href="#" class="btn btn-warning btn-sm">
+               <a href="{% url 'sub-edit' sub.id %}" class="btn btn-warning btn-sm">
                   <span class="material-icons">
                      edit
                   </span>
                </a>
-               <a href="#" class="btn btn-danger btn-sm">
+               <a href="{% url 'sub-delete' sub.id %}" class="btn btn-danger btn-sm">
                   <span class="material-icons">
                      delete_outline
                   </span>
