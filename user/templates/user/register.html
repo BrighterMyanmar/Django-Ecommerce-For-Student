@@ -1,0 +1,34 @@
+{% extends 'aws/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container my-5">
+    <div class="col-md-6 offset-md-3">
+        <h1 class="text-center text-info">Register To Be A Member</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    {{form.username | as_crispy_field }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{form.email | as_crispy_field }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{form.password1 | as_crispy_field }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{form.password2 | as_crispy_field }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{form.phone | as_crispy_field }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    <button type="submit" class="btn btn-success btn-sm float-end">Register</button>
+                    <button type="reset" class="btn btn-outline-warning btn-sm float-end me-2">Cancle</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
