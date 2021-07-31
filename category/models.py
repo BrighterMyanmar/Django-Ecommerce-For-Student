@@ -12,6 +12,9 @@ class SubCat(models.Model):
     image = models.ImageField()
     parent = models.ForeignKey(Category,on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 # create Model 
 # makemigrations 
 # migrate

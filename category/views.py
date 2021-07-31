@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Category,SubCat;
 from .forms import SubCatForm
+from django.contrib.auth.decorators import login_required
+from .decorators import allow_users
 
 def cats(request):
     context = {
@@ -18,6 +20,8 @@ def subs(request):
         "subs":SubCat.objects.all()
         })
 
+@login_required
+@allow_users(["Manager"])
 def subCarte(request) :
     if request.method == "POST" : 
         form = SubCatForm(request.POST,request.FILES)
