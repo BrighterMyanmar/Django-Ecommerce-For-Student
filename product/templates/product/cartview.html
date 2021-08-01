@@ -1,0 +1,85 @@
+{% extends 'aws/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container my-5">
+    <div class="col-md-10 offset-md-1 my-5">
+        <h1 class="text-center text-info">Your Cart Items</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="bg-dark text-white">
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Count</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="yourcartitem">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    let yourCartItems = document.querySelector('.yourcartitem');
+
+    let product = "{{product}}";
+    product = product.replace(/&quot;/g, '"');
+    let products = JSON.parse(product);
+    products.forEach((p) => {
+        p.count = 1;
+    });
+    let generateProduct = () => {
+        let prow = "";
+
+        products.forEach((product) => {
+            prow += `
+            <tr>
+                <td>${product.id}</td>
+                <td>${product.name}</td>
+                <td><img src="http://localhost:8000/media/${product.image}" alt="" width="30px"></td>
+                <td>${product.price}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onClick="changeItemCount('${product.id}',false)"><i class="fas fa-minus"></i></button>
+                    <span style="padding:0 10px;">${product.count}</span>
+                    <button class="btn btn-success btn-sm" onClick="changeItemCount('${product.id}',true)"><i class="fas fa-plus"></i></button>
+                </td>
+                <td>${product.count * product.price}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onClick="removeProduct('${product.id}')"><i class="fas fa-trash"></i></button>
+                </td>
+            </tr>
+        `;
+        });
+        yourCartItems.innerHTML = prow;
+    }
+    generateProduct();
+
+    let changeItemCount = (id, con) => {
+        products.forEach((p) => {
+            if (p.id == id) {
+                if(con) p.count++;
+                else p.count > 1 ? p.count-- : p.count;
+            }
+        });
+        generateProduct();
+    }
+    let removeProduct = (id) => {
+        let localPorduct = localStorage.getItem('productList') ? JSON.parse(localStorage.getItem('productList')) : [];
+        console.log("Original ", localPorduct);
+        let filterProducts = localPorduct.filter(p => p != id);
+        localStorage.setItem('productList',JSON.stringify(filterProducts));
+
+        products.forEach((pd)=>{
+            if(pd.id == id){
+                products = products.filter(p => p.id != id);
+            }
+        });
+        generateProduct();
+    }
+
+
+</script>
+{% endblock %}

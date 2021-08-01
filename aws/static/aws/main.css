@@ -1,3 +1,15 @@
 *{
     font-family: Cambria;
 }
+.cart_count{
+    display:inline-block;
+    width:20px;
+    line-height:20px;
+    background-color: hotpink;
+    border-radius:10px;
+    text-align:center;
+    position:relative;
+    top:-12px;
+    left:-10px;
+    font-size:12px;
+}

@@ -2,10 +2,39 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="container my-5">
-    
-    {% for pro in products %}
-        <h1>{{pro.name}}</h1>
-    {% endfor %}
+    <div class="col-md-10 offset-md-1 my-5">
+        <h1 class="text-center text-info">All Products</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="bg-dark text-white">
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Sub Category</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pro in products %}
+                    <tr>
+                        <td>{{pro.id}}</td>
+                        <td>{{pro.name}}</td>
+                        <td><img src="{{pro.image.url}}" alt="" width="30px"></td>
+                        <td>{{pro.category.name}}</td>
+                        <td>{{pro.subcat.name}}</td>
+                        <td>
+                            <button class="btn btn-success btn-sm" onClick="addToCart('{{pro.id}}')">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
 
 </div>
 {% endblock %}
