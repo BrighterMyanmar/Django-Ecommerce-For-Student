@@ -33,8 +33,9 @@
     });
     let generateProduct = () => {
         let prow = "";
-
+        let grandTotal = 0;
         products.forEach((product) => {
+            grandTotal += product.count * product.price;
             prow += `
             <tr>
                 <td>${product.id}</td>
@@ -53,6 +54,18 @@
             </tr>
         `;
         });
+        prow += `
+            <tr>
+                <td colspan="5" style="text-align:right;"><strong>Grand Total</strong></td>
+                <td colspan="2"><strong>${grandTotal}</strong></td>
+            </tr>
+            <tr>
+                <td colspan="5" style="text-align:right;"><strong></strong></td>
+                <td colspan="2">
+                    <button class="btn btn-success btn-sm" onClick="checkOut()">Check Out</button>
+                </td>
+            </tr>
+        `;
         yourCartItems.innerHTML = prow;
     }
     generateProduct();
@@ -79,7 +92,15 @@
         });
         generateProduct();
     }
-
+   
+    let checkOut = () => {
+        let pStr = "";
+        products.forEach((product)=>{
+            pStr += `${product.id}:${product.count},`;
+        });
+        pStr = pStr.substr(0,pStr.length-1);
+        window.location.href = `http://localhost:8000/checkout/${pStr}`;
+    }
 
 </script>
 {% endblock %}
