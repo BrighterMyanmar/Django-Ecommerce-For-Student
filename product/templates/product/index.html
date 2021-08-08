@@ -6,12 +6,16 @@
         <h1 class="text-center text-info">All Products</h1>
 
         {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>{{message}}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-            {% endfor %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{message}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <script>
+            localStorage.removeItem('productList');
+            getProducts();
+        </script>
+        {% endfor %}
         {% endif %}
         <table class="table table-bordered">
             <thead>
@@ -26,18 +30,18 @@
             </thead>
             <tbody>
                 {% for pro in products %}
-                    <tr>
-                        <td>{{pro.id}}</td>
-                        <td>{{pro.name}}</td>
-                        <td><img src="{{pro.image.url}}" alt="" width="30px"></td>
-                        <td>{{pro.category.name}}</td>
-                        <td>{{pro.subcat.name}}</td>
-                        <td>
-                            <button class="btn btn-success btn-sm" onClick="addToCart('{{pro.id}}')">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{{pro.id}}</td>
+                    <td>{{pro.name}}</td>
+                    <td><img src="{{pro.image.url}}" alt="" width="30px"></td>
+                    <td>{{pro.category.name}}</td>
+                    <td>{{pro.subcat.name}}</td>
+                    <td>
+                        <button class="btn btn-success btn-sm" onClick="addToCart('{{pro.id}}')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </td>
+                </tr>
                 {% endfor %}
 
             </tbody>

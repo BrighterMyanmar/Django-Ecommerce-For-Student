@@ -1,15 +1,31 @@
 {% extends 'aws/base.html' %}
 {% load static %}
-{% block content %}
-<div class="container">
-    <h1>{{content}}</h1>
 
-    {% for cat in cats %}
-    <p>{{cat.name}}</p>
-    <p>{{cat.image.url}}</p>
-    <img src="{{cat.image.url}}" alt="no image" width="100px">
-    <hr>
-    {% endfor %}
+{% block content %}
+<div class="container my-5">
+    <a href="{% url 'cat-create' %}" class="btn btn-primary btn-sm">Create +</a>
+   <table class="table table-bordered">
+      <thead>
+         <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Action</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for cat in cats %}
+         <tr>
+            <td>{{cat.id}}</td>
+            <td>{{cat.name}}</td>
+            <td><img src="{{cat.image.url}}" alt="" width="100px"></td>
+            <td>
+                <a href="{% url 'cat-edit' cat.id %}" class="btn btn-sm btn-warning">Edit</a>
+            </td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
 </div>
 
 {% endblock %}

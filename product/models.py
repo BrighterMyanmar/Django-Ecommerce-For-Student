@@ -19,5 +19,5 @@ class OrderItems(models.Model) :
     price = models.IntegerField() 
     image = models.CharField(max_length=225) 
     count = models.IntegerField() 
-    orderId = models.ForeignKey(Orders,on_delete=models.CASCADE)
+    orderId = models.ForeignKey(Orders,on_delete=models.CASCADE,related_name="items")
     userId = models.ForeignKey(User,on_delete=models.CASCADE)

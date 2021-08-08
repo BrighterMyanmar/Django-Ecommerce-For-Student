@@ -4,6 +4,7 @@ from .models import Category,SubCat;
 from .forms import SubCatForm
 from django.contrib.auth.decorators import login_required
 from .decorators import allow_users
+from django.core.files.storage import default_storage
 
 def cats(request):
     context = {
@@ -49,3 +50,36 @@ def subDelete(request,id):
     subcat = SubCat.objects.get(pk=id)
     subcat.delete()
     return redirect('/cats/subs/')
+
+def catcreate(request):
+    if request.method == "POST" :
+        uploaded_file = request.FILES['file']
+        file_name = default_storage.save(uploaded_file.name,uploaded_file)
+        # file_url = default_storage.url(file_name);
+        cat_name = request.POST.get('name')
+        Category.objects.create(name=cat_name,image=file_name)
+        return redirect('/cats')
+    else :
+        return render(request,'category/catcreate.html')
+
+def catedit(request,id):
+    cat = Category.objects.get(pk=id)
+    if request.method == "POST" :
+        if len(request.FILES) != 0 : 
+            uploaded_file = request.FILES['file']
+            file_name = default_storage.save(uploaded_file.name,uploaded_file)
+            cat_name = request.POST.get('name')
+            Category.objects.update(name=cat_name,image=file_name)
+        else : 
+            cat_name = request.POST.get('name')
+            Category.objects.update(name=cat_name)
+        return redirect('/cats')
+    else :
+       pass
+
+    context = {
+        'title':'Edit Category',
+        'cat':cat
+    }
+    return render(request,'category/catedit.html',context)
+

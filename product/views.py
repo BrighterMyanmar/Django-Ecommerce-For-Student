@@ -46,8 +46,6 @@ def saveOrderItem(request,orderOb,ost):
     return True
 
 
-
-
 def saveOrder(request,ost):
     orderList = ost.split(',')
     total = 0;
@@ -63,3 +61,20 @@ def saveOrder(request,ost):
     order.userId = request.user
     order.save()
     return order;
+
+@login_required
+def myOrders(request):
+    user = request.user 
+    orders = Orders.objects.filter(userId=user)
+    ords = []
+    for order in orders:
+        items = order.items.all() 
+        for item in items : 
+            item.total = item.price * item.count;
+        ords.append({'order':order,'items':items})
+    
+    context = {
+        'title':"My Orders",
+        'orders':ords
+    }
+    return render(request,'product/myorder.html',context)
