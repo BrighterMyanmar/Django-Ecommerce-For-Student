@@ -67,16 +67,13 @@ def catedit(request,id):
     if request.method == "POST" :
         if len(request.FILES) != 0 : 
             uploaded_file = request.FILES['file']
-            file_name = default_storage.save(uploaded_file.name,uploaded_file)
-            cat_name = request.POST.get('name')
-            Category.objects.update(name=cat_name,image=file_name)
+            cat.image = default_storage.save(uploaded_file.name,uploaded_file)
+            cat.name = request.POST.get('name')
+            cat.save()
         else : 
-            cat_name = request.POST.get('name')
-            Category.objects.update(name=cat_name)
+            cat.name = request.POST.get('name')
+            cat.save()
         return redirect('/cats')
-    else :
-       pass
-
     context = {
         'title':'Edit Category',
         'cat':cat

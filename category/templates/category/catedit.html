@@ -10,9 +10,9 @@
             {% csrf_token %}
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control rounded-0" id="name" name="name" value={{cat.name}}>
+                <input type="text" class="form-control rounded-0" id="name" name="name" value="{{cat.name}}">
             </div>
-            <img src="{{cat.image.url}}" alt="">
+            <img src="{{cat.image.url}}" alt="" width="100px">
             <div class="mb-3">
                 <label for="file" class="form-label">Image</label>
                 <input class="form-control" type="file" id="file" name="file" multiple>
