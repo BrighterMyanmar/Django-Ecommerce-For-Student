@@ -1,0 +1,862 @@
+{
+    "meta": {
+        "__export_time": 1629029885781,
+        "__export_app": "firecamp_v2.0.11 ",
+        "__export_version": 1
+    },
+    "project": {
+        "name": "Api Django",
+        "description": ""
+    },
+    "modules": [
+        {
+            "name": "Category Management",
+            "description": "",
+            "requests": [
+                {
+                    "meta": {
+                        "name": "All Cats",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/cats",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/cats",
+                        "query_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Single Cat",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/cats/7",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/cats/7",
+                        "query_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Post Cat",
+                        "description": "",
+                        "active_auth": "bearer",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/cats/",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/cats/",
+                        "query_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI5MDI4ODE2LCJqdGkiOiI1MjNjZTY1ODdmNWE0NDBmOWMzOTIzODNlZjg2YTIyNCIsInVzZXJfaWQiOjF9.EsqdENvDorcu2cvjTUOY3rAl9T8Lx8K_lnfB8H6Sz-o",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "multipart/form-data",
+                                "is_default": true
+                            },
+                            "body": {
+                                "multipart/form-data": {
+                                    "value": [
+                                        {
+                                            "key": "name",
+                                            "value": "IT War",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "image",
+                                            "value": "",
+                                            "disable": false,
+                                            "type": "file"
+                                        }
+                                    ],
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Update Name",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/cats/13/",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/cats/13/",
+                        "query_params": []
+                    },
+                    "method": "PATCH",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\r\n    \"name\":\"Local War\"\r\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Patch Cat",
+                        "description": "",
+                        "active_auth": "bearer",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/cats/15/",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/cats/15/",
+                        "query_params": []
+                    },
+                    "method": "PATCH",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI5MDI5MTk2LCJqdGkiOiJkMmYzZjdmODZjNDU0YjExOWU4ZGVjODg0YmRkOTMzZCIsInVzZXJfaWQiOjF9.qxaewo2dko-_2eklWoxc6kvPuFU6qARKhWNMRUFRkso",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "multipart/form-data",
+                                "is_default": true
+                            },
+                            "body": {
+                                "multipart/form-data": {
+                                    "value": [
+                                        {
+                                            "key": "name",
+                                            "value": "Shan Ethnic War",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "image",
+                                            "value": "",
+                                            "disable": false,
+                                            "type": "file"
+                                        }
+                                    ],
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Delete",
+                        "description": "",
+                        "active_auth": "bearer",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/cats/17",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/cats/17",
+                        "query_params": []
+                    },
+                    "method": "DELETE",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "auth": {
+                        "bearer": {
+                            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI5MDI4ODE2LCJqdGkiOiI1MjNjZTY1ODdmNWE0NDBmOWMzOTIzODNlZjg2YTIyNCIsInVzZXJfaWQiOjF9.EsqdENvDorcu2cvjTUOY3rAl9T8Lx8K_lnfB8H6Sz-o",
+                            "prefix": ""
+                        }
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Product Management",
+            "description": "",
+            "requests": [
+                {
+                    "meta": {
+                        "name": "Get All",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/products",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/products",
+                        "query_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Single Product",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/products/2",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/products/2",
+                        "query_params": []
+                    },
+                    "method": "GET",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Create Product",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/products/",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/products/",
+                        "query_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "multipart/form-data",
+                                "is_default": true
+                            },
+                            "body": {
+                                "multipart/form-data": {
+                                    "value": [
+                                        {
+                                            "key": "name",
+                                            "value": "Ads Template",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "image",
+                                            "value": "",
+                                            "disable": false,
+                                            "type": "file"
+                                        },
+                                        {
+                                            "key": "price",
+                                            "value": "35000",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "category",
+                                            "value": "5",
+                                            "disable": false,
+                                            "type": "text"
+                                        },
+                                        {
+                                            "key": "subcat",
+                                            "value": "5",
+                                            "disable": false,
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Patch Product",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/products/6/",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/products/6/",
+                        "query_params": []
+                    },
+                    "method": "PATCH",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "multipart/form-data",
+                                "is_default": true
+                            },
+                            "body": {
+                                "multipart/form-data": {
+                                    "value": [
+                                        {
+                                            "key": "name",
+                                            "value": "Sidebar Image",
+                                            "disable": false,
+                                            "type": "text"
+                                        }
+                                    ],
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Delete Product",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/products/6",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/products/6",
+                        "query_params": []
+                    },
+                    "method": "DELETE",
+                    "headers": [],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "noBody",
+                                "is_default": true
+                            },
+                            "body": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User Management",
+            "description": "",
+            "requests": [
+                {
+                    "meta": {
+                        "name": "Login",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/token/",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/token/",
+                        "query_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\r\n    \"username\":\"coder\",\r\n    \"password\":\"123\"\r\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "meta": {
+                        "name": "Refresh Token",
+                        "description": "",
+                        "active_auth": "no_auth",
+                        "type": "api",
+                        "version": "1.0"
+                    },
+                    "url": {
+                        "slashes": true,
+                        "protocol": "http:",
+                        "hash": "",
+                        "pathname": "/api/token/refresh/",
+                        "auth": "",
+                        "host": "127.0.0.1:8000",
+                        "port": "8000",
+                        "hostname": "127.0.0.1",
+                        "password": "",
+                        "username": "",
+                        "origin": "http://127.0.0.1:8000",
+                        "href": "http://127.0.0.1:8000/api/token/refresh/",
+                        "query_params": []
+                    },
+                    "method": "POST",
+                    "headers": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "type": "text",
+                            "disable": false
+                        }
+                    ],
+                    "config": {
+                        "ORIGIN": "",
+                        "USERAGENT": "",
+                        "TIMEOUT_MS": 0,
+                        "REJECT_UNAUTHORIZED": false,
+                        "FOLLOWLOCATION": true,
+                        "MAXREDIRS": -1,
+                        "HTTP_VERSION": "V2Tls"
+                    },
+                    "scripts": {
+                        "pre": "",
+                        "post": "",
+                        "test": ""
+                    },
+                    "bodies": [
+                        {
+                            "name": "Default",
+                            "meta": {
+                                "active_body_type": "application/json",
+                                "is_default": true
+                            },
+                            "body": {
+                                "application/json": {
+                                    "value": "{\r\n    \"refresh\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYyOTExNDkxNiwianRpIjoiNWQ4M2Y0MjgzNzkwNDU0MDgzMzgzMGZmNWViNTM4MDAiLCJ1c2VyX2lkIjoxfQ.Gb0VVzbbmNVAp62B3fmDpcl8fVrlyGabvjeUJl1yOcM\"\r\n}",
+                                    "headers": []
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "requests": [],
+    "environments": [
+        {
+            "name": "Production",
+            "variables": {
+                "variable_name": "variable_value"
+            }
+        },
+        {
+            "name": "Development",
+            "variables": {
+                "variable_name": "variable_value"
+            }
+        }
+    ]
+}
